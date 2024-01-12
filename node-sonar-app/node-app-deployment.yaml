@@ -15,16 +15,16 @@ spec:
         app: node-app
     spec:
       containers:
-      - name: node-app
-        image: leonardozwirtes/node-sonar-app:latest
-        ports:
-        - containerPort: 3000
-        env:
-          - name: OTEL_SERVICE_NAME
-            value: "servico-node"
-          - name: OTEL_TRACES_EXPORTER
-            value: "otlp"
-          - name: OTEL_METRICS_EXPORTER
-            value: "otlp"
-          - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: "opentelemetrycollector.default.cluster.local:4317"
+        - name: node-app
+          image: leonardozwirtes/:v1.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: OTEL_SERVICE_NAME
+              value: "servico-node"
+            - name: OTEL_TRACES_EXPORTER
+              value: "otlp"
+            - name: OTEL_METRICS_EXPORTER
+              value: "otlp"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "opentelemetrycollector.default.cluster.local:4317"
